@@ -1,0 +1,18 @@
+{
+    "session" : {
+        "phases" : [
+            {
+                "exercice" : {
+                    "name" : "squat",
+                    "nb_rep" : 10
+                }
+            },
+            {
+                "exercice" : {
+                    "name" : "burpies",
+                    "nb_rep" : 10
+                }
+            }
+        ]
+    }
+}
