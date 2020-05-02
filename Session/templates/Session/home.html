@@ -4,6 +4,9 @@
 {% block title %}Session{% endblock %}
 
 {% block additional_scripts %}
+    <script type="text/javascript">
+        var session = {{ session|safe }};
+    </script>
     <script type="text/javascript" src="{% static 'Session' %}/scripts/session.js"></script>
 {% endblock %}
 
@@ -37,10 +40,9 @@
         </div>
         <div class="card-body collapse" id="phase-{{ forloop.counter }}">
 
-
             <div class="card-deck">
                 {% for exercice in phase %}
-                <div class="card bg-light text-dark">
+                <div class="card bg-light text-dark" id="phase-{{ forloop.parentloop.counter }}-exercice-{{ forloop.counter }}">
                     <div class="card-header">
                         {{ exercice.name }}
                     </div>
@@ -56,5 +58,6 @@
     {% endfor %}
 
 </div>
+
 
 {% endblock %}

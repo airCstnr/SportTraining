@@ -12,6 +12,33 @@ var h = 0;
 var m = 0;
 var s = 0;
 
+var current_phase = 1;
+var current_exercice = 1;
+
+function phases_exercices() {
+    if(state=="On") {
+        var nb_phases = session.phases.length;
+
+        var nb_exercices = session.phases[current_phase-1].length;
+        var phase = document.getElementById('phase-'+current_phase);
+        var exercice = document.getElementById('phase-'+current_phase+'-exercice-'+current_exercice);
+
+        phase.classList.toggle("collapse", false);
+        exercice.classList.remove("bg-light");
+        exercice.classList.add("bg-success");
+
+        current_exercice++;
+        if(current_exercice==nb_exercices+1) {
+            current_exercice=1;
+            current_phase++;
+            if(current_phase==nb_phases+1) {
+                state = "END";
+                toggleChrono();
+            }
+        }
+    }
+}
+
 
 function updateChrono() {
     s++;
@@ -30,6 +57,7 @@ function updateChrono() {
         text = h + ":" + text;
     }
     document.getElementById('chrono').innerHTML = text;
+    phases_exercices();
 }
 
 
@@ -37,7 +65,8 @@ function toggleChrono() {
     var btn = document.getElementById('chrono-btn');   // Get the chrono button
     var card = btn.parentElement.parentElement;        // Get the parent card
     card.classList.remove("bg-info");
-    if(state=="Off") {
+    switch(state) {
+    case "Off":
         btn.innerHTML = "Pause";
         btn.classList.toggle("btn-primary", false);
         btn.classList.toggle("btn-secondary", true);
@@ -46,8 +75,8 @@ function toggleChrono() {
         state = "On";
         updateChrono();
         inter = setInterval(updateChrono, 1000);
-    }
-    else {
+        break;
+    case "On":
         btn.innerHTML = "Start";
         btn.classList.toggle("btn-primary", true);
         btn.classList.toggle("btn-secondary", false);
@@ -55,5 +84,16 @@ function toggleChrono() {
         card.classList.toggle("bg-success", false);
         state = "Off";
         clearInterval(inter);
+        break;
+    case "END":
+        btn.innerHTML = "Finished";
+        btn.classList.toggle("btn-primary", false);
+        btn.classList.toggle("btn-secondary", true);
+        btn.classList.add("disabled");
+        card.classList.toggle("bg-warning", false);
+        card.classList.toggle("bg-success", false);
+        card.classList.add("bg-danger");
+        clearInterval(inter);
+        break;
     }
 }
