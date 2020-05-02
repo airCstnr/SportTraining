@@ -1,18 +1,45 @@
 {
     "session" : {
+        "date" : "2020-05-02T18:25:43.511Z",
         "phases" : [
-            {
-                "exercice" : {
+            [
+                {
+                    "name" : "squat",
+                    "nb_rep" : 10
+                },
+                {
+                    "name" : "burpies",
+                    "nb_rep" : 10
+                },
+                {
                     "name" : "squat",
                     "nb_rep" : 10
                 }
-            },
-            {
-                "exercice" : {
+            ],
+            [
+                {
                     "name" : "burpies",
                     "nb_rep" : 10
+                },
+                {
+                    "name" : "course",
+                    "nb_rep" : -1
+                },
+                {
+                    "name" : "squat",
+                    "nb_rep" : 10
                 }
-            }
+            ],
+            [
+                {
+                    "name" : "burpies",
+                    "nb_rep" : 10
+                },
+                {
+                    "name" : "course",
+                    "nb_rep" : -1
+                }
+            ]
         ]
     }
 }

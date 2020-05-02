@@ -6,8 +6,42 @@
 
 {% block content %}
 
+<div class="container-fluid">
     <div class="jumbotron bg-dark text-light">
-        <h1>Hello world</h1>
+        <h1>Session <small>{{ session.date }}</small></h1>
     <div>
+
+    {% for phase in session.phases %}
+    <div class="card bg-secondary mb-3">
+
+        <div class="card-header">
+            <h3>
+                Phase {{ forloop.counter }}
+                <button type="button" class="close stretched-link" aria-label="Close" data-toggle="collapse" data-target="#phase-{{ forloop.counter }}">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </h3>
+        </div>
+        <div class="card-body" id="phase-{{ forloop.counter }}">
+
+
+            <div class="card-deck">
+                {% for exercice in phase %}
+                <div class="card bg-light text-dark">
+                    <div class="card-header">
+                        {{ exercice.name }}
+                    </div>
+                    <div class="card-body">
+                        {{ exercice.nb_rep }}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
 
 {% endblock %}
