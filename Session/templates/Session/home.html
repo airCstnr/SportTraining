@@ -1,15 +1,28 @@
 {% extends "base.html" %}
-
 {% load static %}
 
 {% block title %}Session{% endblock %}
+
+{% block additional_scripts %}
+    <script type="text/javascript" src="{% static 'Session' %}/scripts/session.js"></script>
+{% endblock %}
+
 
 {% block content %}
 
 <div class="container-fluid">
     <div class="jumbotron bg-dark text-light">
-        <h1>Session <small>{{ session.date }}</small></h1>
+        <h1>Session <small class="text-muted">{{ session.date }}</small></h1>
     <div>
+
+    <div class="card card-body bg-info text-dark text-center sticky-top mb-3">
+        <p id="chrono" class="display-2">Ready?</p>
+        <div class="container">
+            <button id="chrono-btn" type="button" class="btn btn-primary stretched-link" onclick="toggleChrono()">
+                Start
+            </button>
+        </div>
+    </div>
 
     {% for phase in session.phases %}
     <div class="card bg-secondary mb-3">
@@ -22,7 +35,7 @@
                 </button>
             </h3>
         </div>
-        <div class="card-body" id="phase-{{ forloop.counter }}">
+        <div class="card-body collapse" id="phase-{{ forloop.counter }}">
 
 
             <div class="card-deck">
