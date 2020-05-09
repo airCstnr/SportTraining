@@ -1,0 +1,46 @@
+{% load static %}
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}Sport Training{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="static/favicon/site.webmanifest">
+    <script>
+        function clean(node) {
+            /* Remove all whitespace-only #text nodes */
+            for (var n = 0; n < node.childNodes.length; n ++) {
+                var child = node.childNodes[n];
+                if (child.nodeType === 8 || (child.nodeType === 3 && !/\S/.test(child.nodeValue))) {
+                    node.removeChild(child);
+                    n --;
+                } else if(child.nodeType === 1) {
+                    clean(child);
+                }
+            }
+        }
+        clean(document);
+    </script>
+    {% block additional_scripts %}{% endblock %}
+</head>
+
+<body class="bg-dark">
+
+{% block content %}
+    <div class="container">
+        Hello world!
+    </div>
+{% endblock %}
+
+</body
+
+</html>

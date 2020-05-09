@@ -6,7 +6,7 @@ Sport Traing simple app to plan training sessions with exercices and timer.
 ## Installation
 
 - Clone repository in your home foler
-    `git clone SportTraining` TODO : update repository link
+    `git clone https://github.com/airCstnr/SportTraining`
 - Go to project root folder
     `cd SportTraining`
 - Create virtual environment
