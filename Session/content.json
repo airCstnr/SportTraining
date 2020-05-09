@@ -2,44 +2,152 @@
     "session" : {
         "date" : "2020-05-02T18:25:43.511Z",
         "phases" : [
-            [
-                {
-                    "name" : "squat",
-                    "nb_rep" : 10
-                },
-                {
-                    "name" : "burpies",
-                    "nb_rep" : 10
-                },
-                {
-                    "name" : "squat",
-                    "nb_rep" : 10
-                }
-            ],
-            [
-                {
-                    "name" : "burpies",
-                    "nb_rep" : 10
-                },
-                {
-                    "name" : "course",
-                    "nb_rep" : -1
-                },
-                {
-                    "name" : "squat",
-                    "nb_rep" : 10
-                }
-            ],
-            [
-                {
-                    "name" : "burpies",
-                    "nb_rep" : 10
-                },
-                {
-                    "name" : "course",
-                    "nb_rep" : -1
-                }
-            ]
+            {
+                "nb_cycle" : 3,
+                "exercices" : [
+                    {
+                        "name" : "squat",
+                        "nb_rep" : 10,
+                        "details" : "",
+                        "duration" : 3,
+                        "weight": ""
+                    },
+                    {
+                        "name" : "burpies",
+                        "nb_rep" : 10,
+                        "details" : "",
+                        "duration" : 3,
+                        "weight": ""
+                    },
+                    {
+                        "name" : "squat",
+                        "nb_rep" : 10,
+                        "details" : "",
+                        "duration" : 3,
+                        "weight": ""
+                    },
+                    {
+                        "name" : "repos",
+                        "nb_rep" : 0,
+                        "details" : "",
+                        "duration" : 3,
+                        "weight": ""
+                    }
+                ]
+            },
+            {
+                "nb_cycle" : 2,
+                "exercices" : [
+                    {
+                        "name" : "burpies",
+                        "nb_rep" : 10,
+                        "details" : "",
+                        "duration" : 3,
+                        "weight": ""
+                    },
+                    {
+                        "name" : "course",
+                        "nb_rep" : 0,
+                        "details" : "",
+                        "duration" : 3,
+                        "weight": "small"
+                    },
+                    {
+                        "name" : "squat",
+                        "nb_rep" : 10,
+                        "details" : "",
+                        "duration" : 3,
+                        "weight": "big"
+                    }
+                ]
+            },
+            {
+                "nb_cycle" : 1,
+                "exercices" : [
+                    {
+                        "name" : "pédalo",
+                        "nb_rep" : 10,
+                        "details" : "",
+                        "duration" : 3,
+                        "weight": ""
+                    },
+                    {
+                        "name" : "course",
+                        "nb_rep" : 0,
+                        "details" : "",
+                        "duration" : 3,
+                        "weight": ""
+                    },
+                    {
+                        "name" : "repos",
+                        "nb_rep" : 10,
+                        "details" : "",
+                        "duration" : 3,
+                        "weight": ""
+                    }
+                ]
+            },
+            {
+                "nb_cycle" : 3,
+                "exercices" : [
+                    {
+                        "name" : "pédalo",
+                        "nb_rep" : 10,
+                        "details" : "",
+                        "duration" : 3,
+                        "weight": ""
+                    },
+                    {
+                        "name" : "course",
+                        "nb_rep" : 0,
+                        "details" : "",
+                        "duration" : 3,
+                        "weight": ""
+                    },
+                    {
+                        "name" : "course",
+                        "nb_rep" : 0,
+                        "details" : "",
+                        "duration" : 3,
+                        "weight": ""
+                    },
+                    {
+                        "name" : "course",
+                        "nb_rep" : 0,
+                        "details" : "",
+                        "duration" : 3,
+                        "weight": ""
+                    },
+                    {
+                        "name" : "course",
+                        "nb_rep" : 0,
+                        "details" : "",
+                        "duration" : 3,
+                        "weight": ""
+                    },
+                    {
+                        "name" : "course",
+                        "nb_rep" : 0,
+                        "details" : "",
+                        "duration" : 3,
+                        "weight": ""
+                    },
+                    {
+                        "name" : "course",
+                        "nb_rep" : 0,
+                        "details" : "",
+                        "duration" : 3,
+                        "weight": ""
+                    },
+                    {
+                        "name" : "repos",
+                        "nb_rep" : 10,
+                        "details" : "",
+                        "duration" : 3,
+                        "weight": ""
+                    }
+                ]
+            }
         ]
     }
 }
