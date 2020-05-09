@@ -33,18 +33,21 @@
         <div class="card-header">
             <h3>
                 Phase {{ forloop.counter }}
-                <button type="button" class="close stretched-link" aria-label="Close" data-toggle="collapse" data-target="#phase-{{ forloop.counter }}">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <small class="text-info">
+                    Répétition <span id="phase-{{ forloop.counter }}-rep">0</span>/{{ phase.nb_cycle }}
+                </small>
+                <button type="button" class="close stretched-link" aria-label="Close" data-toggle="collapse" data-target="#phase-{{ forloop.counter }}"></button>
             </h3>
         </div>
         <div class="card-body collapse" id="phase-{{ forloop.counter }}">
 
             <div class="card-deck">
-                {% for exercice in phase %}
+                {% for exercice in phase.exercices %}
                 <div class="card bg-light text-dark" id="phase-{{ forloop.parentloop.counter }}-exercice-{{ forloop.counter }}">
                     <div class="card-header">
-                        {{ exercice.name }}
+                        <h5>
+                            {{ exercice.name|title }}
+                        </h5>
                     </div>
                     <div class="card-body">
                         {{ exercice.nb_rep }}
