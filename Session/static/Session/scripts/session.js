@@ -32,8 +32,6 @@ var current_exercice_duration = 0;
  * Next one becomes the current one
  */
 function nextExercice() {
-    console.log(current_phase_index, current_cycle_index, current_exercice_index);
-
     var nb_cycle = session.phases[current_phase_index-1].nb_cycle;
     var nb_exercices = session.phases[current_phase_index-1].exercices.length;
 
@@ -45,6 +43,12 @@ function nextExercice() {
 
         current_phase.classList.toggle("collapse", true);
         current_exercice.classList.replace("bg-success", "bg-info");
+
+        let current_phase_spinner = document.getElementById('phase-'+current_phase_index+'-spinner');
+        let current_exercice_spinner = document.getElementById('phase-'+current_phase_index+'-exercice-'+current_exercice_index+'-spinner');
+
+        current_phase_spinner.setAttribute("hidden", "true");
+        current_exercice_spinner.setAttribute("hidden", "true");
     }
 
     current_exercice_index++;
@@ -83,7 +87,13 @@ function nextExercice() {
     current_exercice.classList.add("bg-success");
     current_exercice.classList.remove("bg-info", "bg-light");
 
-    console.log(current_phase_index, current_cycle_index, current_exercice_index);
+    // get spinners
+    current_phase_spinner = document.getElementById('phase-'+current_phase_index+'-spinner');
+    current_exercice_spinner = document.getElementById('phase-'+current_phase_index+'-exercice-'+current_exercice_index+'-spinner');
+
+    // updare spinners
+    current_phase_spinner.removeAttribute("hidden");
+    current_exercice_spinner.removeAttribute("hidden");
 }
 
 
